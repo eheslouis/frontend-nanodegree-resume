@@ -16,7 +16,6 @@ var bio = {
     ],
     "inName": function (name){
         var array=name.trim().split(" ");
-        console.log(array);
         array[0]=array[0][0].toUpperCase() + array[0].slice(1).toLowerCase();
         array[1]=array[1].toUpperCase();
 
@@ -38,6 +37,10 @@ var bio = {
         {
             $("#skills").append(HTMLskills.replace("%data%", bio.skills[index]));
         }
+
+        $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+        $("#footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+        $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     }
 }
 
@@ -49,24 +52,35 @@ var education = {
             "city": "Paris, France",
             "degree": "Master Degree in Computer Engineering",
             "graduateYear": "2005",
-            "major": "Computer Engineering"
+            "major": "Computer Engineering",
+            "url": "http://www.isep.fr"
         }
     ],
     "OnlineClass": [
         {
             "school": "Udacity",
             "class": "JavaScript Basic",
-            "year": 2015
+            "year": "2015",
+            "url": "http://www.udacity.com"
         }
     ],
     "display": function(){
         for (var index in education.schools)
         {
             $("#education").append(HTMLschoolStart);
-            $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[index].school+HTMLschoolDegree.replace("%data%", education.schools[index].degree)));
+            $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[index].school).replace("#", education.schools[index].url)+HTMLschoolDegree.replace("%data%", education.schools[index].degree));
             $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[index].graduateYear));
             $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[index].city));
             $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[index].major));
+        }
+
+        $("#education").append(HTMLonlineClasses);
+        for (index in education.OnlineClass)
+        {
+            $("#education").append(HTMLschoolStart);
+            $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.OnlineClass[index].class).replace("#", education.OnlineClass[index].url)+HTMLonlineSchool.replace("%data%", education.OnlineClass[index].school));
+            $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.OnlineClass[index].year));
+            $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.OnlineClass[index].url).replace("#", education.OnlineClass[index].url));
         }
     }
 }
@@ -120,13 +134,14 @@ var project = {
             "title": "Portfolio in HTLM",
             "date": "2015",
             "description": "create a HTML Portfolio",
-            "picture": "images/fry.jpg"
+            "picture": "images/projectPortfolio.png",
+            "url": "https://github.com/eheslouis/Project1"
         }
     ],
     "display" : function(){
         for (index in project.projects){
             $("#projects").append(HTMLprojectStart);
-            var title = HTMLprojectTitle.replace("%data%", project.projects[index].title);
+            var title = HTMLprojectTitle.replace("%data%", project.projects[index].title).replace("#", project.projects[index].url);
             var date = HTMLprojectDates.replace("%data%", project.projects[index].date);
             var desc = HTMLprojectDescription.replace("%data%", project.projects[index].description);
             var img = HTMLprojectImage.replace("%data%", project.projects[index].picture)
@@ -146,7 +161,6 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
-// $(document).click(function(loc) {
-//   // your code goes here
-//   logClicks(loc.pageX, loc.pageY);
-// });
+$(document).click(function(loc) {
+  logClicks(loc.pageX, loc.pageY);
+});

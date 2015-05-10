@@ -15,7 +15,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #fe642e;
   line-height: 48px;
   display: inline;
 }
@@ -23,7 +23,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #4a4a4a;
   line-height: 29px;
   padding: 10px;
 }
@@ -87,37 +87,46 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #fe642e;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #fe642e;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #fe642e;
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.gray {
-  background-color: #F3F3F3;
+.yellow {
+  background-color: #FAF2B6;
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4A4A4A;
+.blue {
+  background-color: #FCD1AC;/*#C8F1FA;*/
 }
 
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
+.dark-gray {
+  background-color: #FAF2B6;
 }
+
+#header {
+  background-color: #78E2FA;
+  /*background: url(../images/mainimage.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}
+
 
 .flex-box {
   display: -webkit-flex;
@@ -142,7 +151,7 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 150px;
   display: none;
 }
 
@@ -178,7 +187,7 @@ span {
 
 @media only screen and (max-width:900px) {
   .biopic {
-    width: 175px;
+    width: 125px;
   }
 }
 
@@ -187,7 +196,7 @@ span {
     margin-top: 10%;
   }
   .biopic {
-    width: 150px;
+    width: 100px;
   }
   .welcome-message {
     display: none;
@@ -205,6 +214,10 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+}
+
+.project-img{
+  height: 200px;
 }
 
 @media only screen and (min-width: 750px) {
