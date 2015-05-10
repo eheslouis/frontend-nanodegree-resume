@@ -105,26 +105,21 @@ a {
 }
 
 .yellow {
-  background-color: #FAF2B6;
+  background-color: #faf2b6;
   padding-bottom: 10px;
   clear:both;
 }
 
 .blue {
-  background-color: #FCD1AC;/*#C8F1FA;*/
+  background-color: #fcd1ac;
 }
 
 .dark-gray {
-  background-color: #FAF2B6;
+  background-color: #faf2b6;
 }
 
 #header {
-  background-color: #78E2FA;
-  /*background: url(../images/mainimage.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
+  background-color: #78e2fa;
 }
 
 

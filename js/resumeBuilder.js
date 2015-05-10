@@ -160,7 +160,3 @@ project.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
-
-$(document).click(function(loc) {
-  logClicks(loc.pageX, loc.pageY);
-});
