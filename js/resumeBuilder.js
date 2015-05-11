@@ -5,6 +5,7 @@ var bio = {
         "mobile": "(+84) 123 223 0500",
         "email": "eheslouis@gmail.com",
         "github": "eheslouis",
+        "twitter": "@eheslouis",
         "location": "Hanoi, Vietnam"
     },
     "picture": "images/me.jpg",
@@ -27,6 +28,7 @@ var bio = {
 
         $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
         $("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+        $("#topContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
         $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
         $("#header").append(HTMLbioPic.replace("%data%", bio.picture));
